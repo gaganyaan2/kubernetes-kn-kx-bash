@@ -6,7 +6,7 @@ reset=`tput sgr0`
 if [ "$1" == "" ]; then
     all_namespace=$(kubectl get ns | sed 1d | awk '{print $1}')
     current_namespace=$(kubectl config get-contexts | sed 1d | grep '*' | awk '{print $5}')
-    if [ $current_namespace == "" ]; then
+    if [ "$current_namespace" == "" ]; then
         echo "Current namespace is not set. Set using kn <namespace>"
     else
         current_namespace_line_number=$(echo "$all_namespace" | cat -n | grep "$current_namespace" | awk '{print $1}')
