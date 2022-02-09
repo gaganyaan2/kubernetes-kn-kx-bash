@@ -4,11 +4,7 @@ Simple kubernetes context and namespace switch using shell/bash script
 ### Install kn and kx:
 
 ```bash
-curl https://raw.githubusercontent.com/koolwithk/kubernetes-kn-kx-bash/main/kn.sh -o /usr/local/bin/kn
-chmod +x /usr/local/bin/kn
-
-curl https://raw.githubusercontent.com/koolwithk/kubernetes-kn-kx-bash/main/kx.sh -o /usr/local/bin/kx
-chmod +x /usr/local/bin/kx
+curl -s https://raw.githubusercontent.com/koolwithk/kubernetes-kn-kx-bash/main/install.sh | sudo bash
 ```
 
 ### Run:
