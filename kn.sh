@@ -5,7 +5,7 @@ reset=`tput sgr0`
 
 if [ "$1" == "" ]; then
     all_namespace=$(kubectl get ns | sed 1d | awk '{print $1}')
-    current_namespace_line_number=$(echo "$all_namespace" | cat -n | grep $(kubectl config view | grep 'namespace:' | awk '{print $2}') | awk '{print $1}')
+    current_namespace_line_number=$(echo "$all_namespace" | cat -n | grep $(kubectl config get-contexts | sed 1d | grep '*' | awk '{print $5}') | awk '{print $1}')
     echo "$all_namespace" | sed "$current_namespace_line_number s/.*/$(tput setaf 2)&$(tput sgr0)/"
 
 else
