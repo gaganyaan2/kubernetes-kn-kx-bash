@@ -16,12 +16,17 @@ kn <namespace>     #switch to other namespace
 kx <context>       #switch to other context
 ```
 
-## Why kx and kn in bash?
-- Simple bash script file with 2KB in size.
+### Why kx and kn in bash?
+- Size is less than 10KB
+- Simple and Easy to install
 
-## Prerequisites:
+### Limitation:
+
+- Slower than kubectx/kubens as it's calls shell sed, awk, grep, kubectl in background.
+
+### Prerequisites:
 - kubectl
 
-## Refrences:
+### Refrences:
 - https://kubernetes.io/docs/reference/kubectl/cheatsheet/
 - https://github.com/ahmetb/kubectx
